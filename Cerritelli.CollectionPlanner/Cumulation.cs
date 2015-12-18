@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cerritelli.CollectionPlanner.Interfaces;
 
 namespace Cerritelli.CollectionPlanner
@@ -12,7 +13,7 @@ namespace Cerritelli.CollectionPlanner
     {
         public Cumulation()
         {
-            Wishlist = new List<Wish>();
+            Wishlist = new Wishlist();
         }
 
         public Guid Id { get; set; }
@@ -20,7 +21,7 @@ namespace Cerritelli.CollectionPlanner
         public string Description { get; set; }
 
         public IEnumerable<Acquisition> Acquisitions { get; set; } 
-        public IEnumerable<Wish> Wishlist { get; set; }   
+        public Wishlist Wishlist { get; set; }   
 
         public Cumulation AddNewAcquisition(Acquisition acquisition)
         {
@@ -31,9 +32,20 @@ namespace Cerritelli.CollectionPlanner
 
         public Cumulation AddToWishlist(Wish wish)
         {
-            ((List<Wish>)Wishlist).Add(wish);
-
+            Wishlist.Add(wish);
             return this;
+        }
+    }
+
+    public class Wishlist : List<Wish>
+    {
+        public ICollectible this[Guid collectibleId]
+        {
+            get
+            {
+                var firstOrDefault   = this.FirstOrDefault(wish => wish.DesiredCollectible.Id == collectibleId);
+                return firstOrDefault != null ? firstOrDefault.DesiredCollectible : default(ICollectible);
+            }
         }
     }
 }

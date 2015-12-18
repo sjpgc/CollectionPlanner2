@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Cerritelli.CollectionPlanner;
 using Cerritelli.CollectionPlanner.BaseTypes;
@@ -32,7 +31,18 @@ namespace given_a_collectionist_and_a_collectibles_catalog
             {
                 Collections = new Collections
                 {
-                    new Cumulation{Id = Guid.NewGuid(), Name = "Main"}
+                    new Cumulation{
+                        Id = Guid.NewGuid(), 
+                        Name = "Main",
+                        Wishlist = new Wishlist
+                        {
+                            new Wish
+                            {
+                                Id = Guid.NewGuid(),
+                                DesiredCollectible = new Collectible()
+                            }
+                        }
+                    }
                 }
             };
 
@@ -46,8 +56,11 @@ namespace given_a_collectionist_and_a_collectibles_catalog
             var willingToPay = AmountRange.Build(5, 10, new Currency());
             var result = collectionBuilder.AddToWishlist(collectionist.Collections["Main"], collectible, willingToPay);
 
-            Assert.That(result.Wishlist.Any());
-            Assert.AreEqual(collectible, result.Wishlist.First().DesiredCollectible);
+            var wishlistIsNotEmpty = result.Wishlist.Any();
+            var wishlistContainsExpectedCollectible = result.Wishlist[sampleCollectibleId].Equals(collectible);
+
+            Assert.That(wishlistIsNotEmpty);
+            Assert.That(wishlistContainsExpectedCollectible);
         }
 
     }
