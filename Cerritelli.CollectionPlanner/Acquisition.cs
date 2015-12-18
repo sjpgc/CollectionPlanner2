@@ -6,7 +6,7 @@ namespace Cerritelli.CollectionPlanner
 {
     public class Acquisition : IPersistable, IHappen
     {
-        public IIdentity Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime HappenedWhen { get; set; }
         public ICollectible CollectibleAcquired { get; set; }
         public Amount PricePaid { get; set; }

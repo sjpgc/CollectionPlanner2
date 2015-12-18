@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cerritelli.CollectionPlanner", "Cerritelli.CollectionPlanner\Cerritelli.CollectionPlanner.csproj", "{331962CD-56A1-4DFE-87C5-8E76458C2FAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cerritelli.CollectionPlanner.BehaviourTests", "Cerritelli.CollectionPlanner.Tests\Cerritelli.CollectionPlanner.BehaviourTests.csproj", "{C9D59F94-70D2-4DBE-BF0D-2FC1FE5139A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cerritelli.CollectionPlanner.Businness", "Cerritelli.CollectionPlanner.Businness\Cerritelli.CollectionPlanner.Businness.csproj", "{3A45254A-760C-4583-AFCF-A7DBAF648D65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{331962CD-56A1-4DFE-87C5-8E76458C2FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{331962CD-56A1-4DFE-87C5-8E76458C2FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{331962CD-56A1-4DFE-87C5-8E76458C2FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9D59F94-70D2-4DBE-BF0D-2FC1FE5139A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D59F94-70D2-4DBE-BF0D-2FC1FE5139A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D59F94-70D2-4DBE-BF0D-2FC1FE5139A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D59F94-70D2-4DBE-BF0D-2FC1FE5139A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A45254A-760C-4583-AFCF-A7DBAF648D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A45254A-760C-4583-AFCF-A7DBAF648D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A45254A-760C-4583-AFCF-A7DBAF648D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A45254A-760C-4583-AFCF-A7DBAF648D65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

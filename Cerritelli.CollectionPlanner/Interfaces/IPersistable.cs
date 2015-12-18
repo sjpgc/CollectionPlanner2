@@ -1,7 +1,9 @@
-﻿namespace Cerritelli.CollectionPlanner.Interfaces
+﻿using System;
+
+namespace Cerritelli.CollectionPlanner.Interfaces
 {
     public interface IPersistable
     {
-        IIdentity Id { get; set; }
+        Guid Id { get; set; }
     }
 }

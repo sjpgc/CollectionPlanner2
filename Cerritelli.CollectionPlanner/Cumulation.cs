@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cerritelli.CollectionPlanner.Interfaces;
 
 namespace Cerritelli.CollectionPlanner
@@ -9,7 +10,12 @@ namespace Cerritelli.CollectionPlanner
     /// </summary>
     public class Cumulation : IPersistable, IHaveAName, IHaveADescription
     {
-        public IIdentity Id { get; set; }
+        public Cumulation()
+        {
+            Wishlist = new List<Wish>();
+        }
+
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -25,7 +31,7 @@ namespace Cerritelli.CollectionPlanner
 
         public Cumulation AddToWishlist(Wish wish)
         {
-            // TODO: implement
+            ((List<Wish>)Wishlist).Add(wish);
 
             return this;
         }
