@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acquisition.cs" />
+    <Compile Include="EventArguments\AddedToWishlistArgs.cs" />
     <Compile Include="BaseTypes\AmountRange.cs" />
     <Compile Include="BaseTypes\Address.cs" />
     <Compile Include="BaseTypes\Amount.cs" />
@@ -55,6 +56,8 @@
     <Compile Include="Interfaces\IHaveADescription.cs" />
     <Compile Include="Interfaces\IHaveAName.cs" />
     <Compile Include="Interfaces\IPersistable.cs" />
+    <Compile Include="Offer.cs" />
+    <Compile Include="EventArguments\OfferMadeArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seller.cs" />
     <Compile Include="Wish.cs" />

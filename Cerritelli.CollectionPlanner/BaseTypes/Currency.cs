@@ -1,7 +1,14 @@
-﻿namespace Cerritelli.CollectionPlanner.BaseTypes
+﻿using System;
+
+namespace Cerritelli.CollectionPlanner.BaseTypes
 {
-    public struct Currency
+    public class Currency : IEquatable<Currency>
     {
-        // TODO: implement
+        public string Symbol { get; set; }
+
+        public bool Equals(Currency other)
+        {
+            return other.Symbol == Symbol;
+        }
     }
 }
